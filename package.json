@@ -2,8 +2,8 @@
   "name": "music-app",
   "productName": "Music App",
   "version": "3.0.0",
-  "description": "Music app built with webpack and vue.js.",
-  "author": "microeinhundert <contact@micro100.de>",
+  "description": "Music-Streaming app built with Webpack, Vue.js, Vuex and the Spotify API.",
+  "author": "Leon Seipp <l.seipp@microeinhundert-com>",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
