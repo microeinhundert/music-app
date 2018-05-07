@@ -1,0 +1,73 @@
+// -----------------------------------------------------------------------------
+// This file contains all global mixins.
+// -----------------------------------------------------------------------------
+
+@mixin larger-than($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+@mixin smaller-than($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+@mixin contentWidth() {
+  width: $content-width-85;
+  margin: 0 auto;
+  max-width: 1920px;
+}
+
+@mixin item-hover {
+  color: $white-70;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $white;
+  }
+
+  &.is-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+@mixin comma-separated($size: null) {
+  @include item-hover;
+  position: relative;
+  margin-right: 5px;
+  padding-right: 3px;
+  color: $white-70;
+  font-size: $size;
+
+  &:not(:last-child):after {
+    position: absolute 0 0 0 initial;
+    content: ',';
+  }
+}
+
+@mixin lazy-fadein {
+  opacity: 0;
+  transition: all 0.3s;
+
+  &[lazy=loaded] {
+    opacity: 1;
+  }
+}
+
+@mixin ellipsis-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

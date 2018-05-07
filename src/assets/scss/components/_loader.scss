@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the loader component.
+// -----------------------------------------------------------------------------
+
+.c-loader {
+  position: fixed 0;
+  z-index: 997;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $main-bg-color;
+
+  &__inner {
+    position: relative;
+    width: 100px;
+  }
+
+  &__wave {
+    position: absolute;
+    bottom: 0;
+    border-radius: 5px;
+    background-color: $accent-color;
+    size: 5px;
+  }
+}

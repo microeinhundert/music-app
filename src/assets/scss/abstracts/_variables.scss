@@ -1,0 +1,47 @@
+// -----------------------------------------------------------------------------
+// This file contains all global variables.
+// -----------------------------------------------------------------------------
+
+// fonts
+$primary-font-stack: 'San Francisco', sans-serif !default;
+$secondary-font-stack: 'Open Sans', sans-serif !default;
+
+// colors
+$white: #fff !default;
+$black: #000 !default;
+$blue: #1A1D2C !default;
+$dark-blue: darken($blue, 10%) !default;
+$main-bg-color: darken($blue, 5%) !default;
+
+$accent-color: var(--accent-color) !default;
+
+// transparent colors
+$white-70: rgba($white, 0.7) !default;
+$white-50: rgba($white, 0.5) !default;
+$white-20: rgba($white, 0.2) !default;
+$white-10: rgba($white, 0.1) !default;
+
+$black-70: rgba($black, 0.7) !default;
+$black-50: rgba($black, 0.5) !default;
+$black-20: rgba($black, 0.2) !default;
+$black-10: rgba($black, 0.1) !default;
+
+// widths
+$content-width-85: 85% !default;
+$content-width-95: 95% !default;
+
+// font weights
+$font-weight-light: 300 !default;
+$font-weight-regular: 400 !default;
+$font-weight-bold: 600 !default;
+
+// shadows
+$backdrop-shadow: 0 20px 40px rgba($black, 0.15) !default;
+$backdrop-shadow-highlight: 0 20px 50px rgba($black, 0.4) !default;
+
+// viewport breakpoints
+$breakpoints: (
+  sm: 767px,
+  md: 992px,
+  lg: 1200px
+) !default;

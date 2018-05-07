@@ -1,0 +1,31 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations.
+// -----------------------------------------------------------------------------
+
+// San Francisco - Thin
+@font-face {
+    font-weight: $font-weight-light;
+    font-family: 'San Francisco';
+    src: url('~/assets/fonts/SanFrancisco/Thin.woff');
+}
+
+// San Francisco - Regular
+@font-face {
+    font-weight: $font-weight-regular;
+    font-family: 'San Francisco';
+    src: url('~/assets/fonts/SanFrancisco/Regular.woff');
+}
+
+// San Francisco - Bold
+@font-face {
+    font-weight: $font-weight-bold;
+    font-family: 'San Francisco';
+    src: url('~/assets/fonts/SanFrancisco/SemiBold.woff');
+}
+
+// Open Sans - Bold
+@font-face {
+    font-weight: $font-weight-bold;
+    font-family: 'Open Sans';
+    src: url('~/assets/fonts/OpenSans/Bold.ttf');
+}

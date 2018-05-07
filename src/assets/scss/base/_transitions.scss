@@ -1,0 +1,73 @@
+// -----------------------------------------------------------------------------
+// This file contains styles related to transitions.
+// -----------------------------------------------------------------------------
+
+// fade transition
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+
+// slide down transition with transform (notices)
+.slide-down-transform-enter-active,
+.slide-down-transform-leave-active {
+  transition: transform 0.3s;
+}
+
+.slide-down-transform-enter {
+  transform: translateY(-100%);
+}
+
+.slide-down-transform-leave-to {
+  transform: translateY(-100%);
+}
+
+
+// slide right transition with transform
+.slide-right-transform-enter-active,
+.slide-right-transform-leave-active {
+  transition: transform 0.3s;
+}
+
+.slide-right-transform-enter {
+  transform: translateX(-100%);
+}
+
+.slide-right-transform-leave-to {
+  transform: translateX(-100%);
+}
+
+// slide left transition with transform
+.slide-left-transform-enter-active,
+.slide-left-transform-leave-active {
+  transition: transform 0.3s;
+}
+
+.slide-left-transform-enter {
+  transform: translateX(100%);
+}
+
+.slide-left-transform-leave-to {
+  transform: translateX(100%);
+}
+
+
+// slide up transition with margin (cover in sidebar)
+.slide-up-margin-enter-active,
+.slide-up-margin-leave-active {
+  transition: margin 0.3s;
+}
+
+.slide-up-margin-enter {
+  margin-bottom: -100%;
+}
+
+.slide-up-margin-leave-to {
+  margin-bottom: -100%;
+}

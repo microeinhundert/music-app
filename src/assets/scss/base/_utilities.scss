@@ -1,0 +1,10 @@
+// -----------------------------------------------------------------------------
+// This file contains standalone utility classes.
+// -----------------------------------------------------------------------------
+
+// utilitiy classes for sidebar margin
+@include larger-than('sm') {
+  .u-sidebarMargin {
+    margin-left: var(--u-sidebar-margin);
+  }
+}

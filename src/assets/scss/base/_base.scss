@@ -1,0 +1,95 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 1280px;
+  background-color: $main-bg-color;
+}
+
+input {
+  user-select: text;
+}
+
+img {
+  display: block;
+  size: 100% auto;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+figure {
+  margin: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+// tooltip styling
+.c-tooltips {
+  &__single {
+    position: relative;
+    z-index: 1000;
+    display: block !important;
+    margin-bottom: 12px;
+    transition-duration: 0.3s;
+    transition-property: opacity, visibility;
+
+    &[aria-hidden='true'] {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &[aria-hidden='false'] {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__inner {
+    padding: 7px 10px;
+    border-radius: 3px;
+    background: $accent-color;
+    letter-spacing: 1.5px;
+    font-weight: $font-weight-bold;
+    font-family: $primary-font-stack;
+    transition: background-color 0.3s;
+
+    &:after {
+      position: absolute 100% initial initial calc(50% - 8px);
+      border: 8px solid;
+      border-color: $accent-color transparent transparent transparent;
+      content: "";
+      transition: border-color 0.3s;
+    }
+  }
+}
+
+// color picker
+.c-colorPicker {
+    display: flex;
+    &__color {
+        margin-right: 1em;
+        border: 3px solid;
+        border-color: transparent;
+        border-radius: 5px;
+        transition: all 0.3s;
+        size: 70px;
+        &:hover {
+            box-shadow: $backdrop-shadow;
+            transform: scale(1.1);
+        }
+
+        &.is-active {
+          border-color: $white;
+        }
+    }
+}

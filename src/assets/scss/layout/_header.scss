@@ -1,0 +1,110 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header component.
+// -----------------------------------------------------------------------------
+
+.c-header {
+  position: fixed 0 0 initial 0;
+  z-index: 998;
+  display: flex;
+  justify-content: center;
+  padding: 13px 0;
+  border-bottom: 1px solid;
+  border-color: transparent;
+  transition-duration: 0.3s;
+  transition-property: background-color, border-color;
+  transform: translateZ(0);
+  -webkit-app-region: drag;
+
+  &.is-scrolled {
+    border-color: $white-10;
+    background-color: $dark-blue;
+
+    .c-header__container {
+      width: $content-width-95;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    width: $content-width-85;
+    transition: width 0.3s;
+    will-change: width;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+
+    &--left {
+      flex: 1;
+      justify-content: flex-start;
+    }
+
+    &--middle {
+      flex: 2;
+      margin: 0 10px;
+    }
+
+    &--right {
+      position: relative;
+      flex: 1;
+      justify-content: flex-end;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+  }
+
+  &__navigationIcon {
+    transition: transform 0.3s;
+
+    &--back {
+      &:hover {
+        transform: translateX(-2px);
+      }
+    }
+
+    &--forward {
+      &:hover {
+        transform: translateX(2px);
+      }
+    }
+  }
+
+  &__search {
+    position: relative;
+    width: 100%;
+    -webkit-app-region: no-drag;
+  }
+
+  &__searchField {
+    z-index: 1;
+    padding: 12px 12px 12px 50px;
+    width: 100%;
+    outline: 0;
+    border: none;
+    border-radius: 5px;
+    background-color: $white-10;
+    color: $white;
+    letter-spacing: 1.3px;
+    transition-duration: 0.3s;
+    transition-property: background-color, box-shadow;
+
+    &:focus {
+      background-color: $white-20;
+      box-shadow: $backdrop-shadow;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $white-50;
+    }
+  }
+
+  &__searchIcon {
+    position: absolute 9px initial initial 17px;
+    z-index: 2;
+    color: $white-50;
+  }
+}

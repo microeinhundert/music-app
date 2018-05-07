@@ -1,0 +1,130 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the item component.
+// -----------------------------------------------------------------------------
+
+.c-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background-color: $blue;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: $backdrop-shadow-highlight;
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: lighten($blue, 2%);
+  }
+
+  &__coverImage {
+    @include lazy-fadein;
+    will-change: transform;
+  }
+
+  &__overlay {
+    position: absolute 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to top, $accent-color 25%, rgba(80, 80, 80, 0.5) 100%);
+    font-size: 1.3em;
+  }
+
+  &__overlayInner {
+    display: flex;
+    flex: 0.8;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+  }
+
+  &__metaInner {
+    z-index: 2;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.4em;
+
+    span {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &__artists {
+    a {
+      @include comma-separated();
+    }
+  }
+
+  &--artist,
+  &--category {
+    .c-box__meta {
+      @include item-hover;
+      position: absolute 0;
+      z-index: 1;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 40px;
+      height: 100%;
+    }
+
+    .c-box__metaInner {
+      font-size: 1.3em;
+    }
+
+    &:hover {
+      .c-box__coverImage {
+        transform: scale(1.07);
+      }
+    }
+  }
+
+  &--artist {
+    max-height: 400px;
+
+    .c-box__meta {
+      background: linear-gradient(to top, rgba($black,0.7), rgba($black,0));
+    }
+
+    .c-box__coverImage {
+      width: auto;
+      @supports (filter: brightness(70%) contrast(110%)) {
+        filter: brightness(70%) contrast(110%);
+      }
+    }
+
+    @supports (filter: none) {
+      &:hover {
+        .c-box__coverImage {
+          filter: none;
+        }
+      }
+    }
+  }
+
+  &--category {
+    .c-box__coverImage {
+      transform: scale(1.02);
+    }
+  }
+
+  &--playlist {
+    .c-box__meta {
+      padding: 20px 15px;
+    }
+  }
+}

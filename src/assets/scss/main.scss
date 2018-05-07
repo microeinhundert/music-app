@@ -1,0 +1,34 @@
+@charset 'UTF-8';
+
+// 1. Vendor
+@import 'normalize.css/normalize.css';
+
+// 2. Configuration and helpers
+@import './abstracts/variables',
+        './abstracts/mixins';
+
+// 3. Base
+@import './base/base',
+        './base/fonts',
+        './base/transitions',
+        './base/typography',
+        './base/utilities';
+
+
+// 4. Layout
+@import './layout/footer',
+        './layout/header',
+        './layout/section',
+        './layout/sidebar',
+        './layout/stage';
+
+// 5. Components
+@import './components/splash/device',
+        './components/button',
+        './components/icon',
+        './components/box',
+        './components/list',
+        './components/loader',
+        './components/modal',
+        './components/navigation',
+        './components/notice';

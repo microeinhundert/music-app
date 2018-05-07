@@ -1,0 +1,114 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the section component.
+// -----------------------------------------------------------------------------
+
+.c-viewSection {
+  padding: 30px 0;
+
+  &:last-of-type {
+    margin-bottom: 81px;
+  }
+
+  &__inner {
+    @include contentWidth;
+  }
+
+  &__wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__overflowGradient {
+    pointer-events: none;
+    z-index: 2;
+    width: 150px;
+
+    &--left {
+      position: absolute 0 initial 0 0;
+      background: linear-gradient(to left, transparent, cubic-bezier(0.48, 0.30, 0.64, 1.00), $main-bg-color);
+    }
+
+    &--right {
+      position: absolute 0 0 0 initial;
+      background: linear-gradient(to right, transparent, cubic-bezier(0.48, 0.30, 0.64, 1.00), $main-bg-color);
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  &__subtitle {
+    color: $white-70;
+    margin-bottom: 0;
+    margin-top: 10px;
+  }
+
+  &__collapseToggle {
+    @include item-hover;
+    display: flex;
+    align-items: center;
+  }
+
+  &__collapseToggleIcon {
+    transition: transform 0.3s;
+
+    &.is-collapsed {
+      transform: scaleY(-1);
+    }
+  }
+
+  &__carouselControls {
+    display: flex;
+  }
+
+  &__carouselControlsIcon {
+    @include item-hover;
+  }
+
+  &__container {
+
+    &--carousel {
+      display: flex;
+      flex-wrap: nowrap;
+      margin: 0 -10px;
+
+      .c-box {
+        margin: 0 10px;
+        width: 270px;
+        min-width: 270px;
+      }
+    }
+
+    @for $i from 1 through 12 {
+      &--#{$i}Columns {
+        display: grid;
+        grid-template-columns: repeat($i, 1fr);
+        grid-gap: 20px;
+      }
+    }
+
+    &--list {
+      display: grid;
+      grid-auto-rows: 75px;
+      grid-row-gap: 2px;
+    }
+  }
+
+  &__container p {
+    margin: 0;
+    font-size: 23px;
+    line-height: 1.5em;
+    color: $white-70;
+  }
+
+  &__copyright {
+    display: block;
+    margin-top: 25px;
+    color: $white-70;
+    font-size: 0.7em;
+  }
+}

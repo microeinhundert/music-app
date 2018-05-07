@@ -1,0 +1,51 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the navigation component.
+// -----------------------------------------------------------------------------
+
+.c-navigation {
+  @include contentWidth;
+  z-index: 2;
+  margin-top: 15px;
+
+  &__list {
+    display: flex;
+    position: relative;
+  }
+
+  &__activeIndicator {
+    height: 1px;
+    width: 100%;
+    background-color: $accent-color;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  &__item {
+    margin-right: 3em;
+    padding: 13px 0;
+
+    &.is-exact-active {
+
+      .c-navigation__link {
+        color: $white;
+      }
+
+    }
+  }
+
+  &__link {
+    color: $white-50;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: $font-weight-bold;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: color 0.5s;
+
+    &:hover {
+      color: $white;
+    }
+
+  }
+}

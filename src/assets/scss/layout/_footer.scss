@@ -1,0 +1,151 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer component.
+// -----------------------------------------------------------------------------
+
+.c-footer {
+  position: fixed initial 0 0 0;
+  z-index: 999;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  overflow: hidden;
+  padding: 15px 20px;
+  border-top: 1px solid $white-10;
+  background: $dark-blue;
+  transform: translateZ(0);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    height: 50px;
+
+    &--left {
+      flex: 1;
+      align-items: center;
+      justify-content: flex-start;
+      transition: transform 0.3s;
+      will-change: transform;
+
+      &.is-coverHidden {
+        transform: translateX(-60px);
+
+        .c-footer__cover {
+          opacity: 0;
+        }
+      }
+    }
+
+    &--middle {
+      flex: 0.5;
+    }
+
+    &--right {
+      flex: 1;
+      justify-content: flex-end;
+    }
+  }
+
+  &__background {
+    position: absolute -15px initial 0 -20px;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    max-width: 400px;
+    height: 81px;
+
+    &:before {
+      position: absolute 0;
+      z-index: 1;
+      background: linear-gradient(to left, $dark-blue, cubic-bezier(0.48, 0.30, 0.64, 1.00), rgba($dark-blue, 0.5)), radial-gradient(circle, rgba($dark-blue, 0.3), $dark-blue);
+      content: "";
+    }
+  }
+
+  &__cover {
+    position: relative;
+    overflow: hidden;
+    margin-right: 15px;
+    border-radius: 3px;
+    box-shadow: $backdrop-shadow;
+    transition: opacity 0.3s;
+    size: 50px;
+
+    .c-button {
+      opacity: 0;
+    }
+
+    &:hover {
+      .c-button {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__playback {
+    overflow: hidden;
+    max-width: 450px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__playbackTitle {
+    font-weight: $font-weight-bold;
+    font-size: 1.2em;
+  }
+
+  &__playbackArtists {
+    margin-top: 2px;
+
+    a {
+      @include comma-separated($size: 0.9em);
+    }
+  }
+
+  &__playbackControls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__playbackTime {
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+    padding: 5px 10px;
+    width: 110px;
+    border-radius: 5px;
+    background-color: $blue;
+    font-weight: $font-weight-bold;
+  }
+
+  &__playbackTimeProgress {
+    margin-right: 5px;
+
+    &:after {
+      content: " /";
+    }
+  }
+
+  &__playbackProgress {
+    position: absolute initial 0 0 0;
+    height: 4px;
+  }
+
+  &__playbackProgressBar {
+    position: absolute;
+    background-color: $accent-color;
+    color: $accent-color;
+    size: 100%;
+
+    &::-moz-progress-bar {
+      background-color: $accent-color;
+    }
+
+    &::-webkit-progress-value {
+      background-color: $accent-color;
+    }
+  }
+}

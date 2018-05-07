@@ -1,0 +1,112 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the list component.
+// -----------------------------------------------------------------------------
+
+.c-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 2em;
+  size: 100%;
+  background-color: $blue;
+  color: $white-70;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $white-10;
+
+    .c-list__playbackToggle {
+      color: $white;
+    }
+
+    .c-list__coverImage {
+      filter: brightness(50%);
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+  }
+
+  &__index {
+    color: $white;
+    font-weight: $font-weight-light;
+    font-size: 1.4em;
+  }
+
+  &__playingIcon {
+    color: $white;
+    font-size: 1.7em;
+  }
+
+  &__image {
+    position: relative;
+    width: 75px;
+    background-color: lighten($blue, 2%);
+  }
+
+  &__coverImage {
+    @include lazy-fadein;
+  }
+
+  &__playbackToggle {
+    position: absolute 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba($white, 0);
+    font-size: 2.5em;
+    transition: color 0.3s;
+  }
+
+  &__meta {
+    @include ellipsis-overflow;
+    flex: 1;
+    margin-left: 1em;
+  }
+
+  &__title {
+    color: $white;
+    font-weight: $font-weight-bold;
+    font-size: 1.1em;
+  }
+
+  &__artists {
+    @include ellipsis-overflow;
+    margin-top: 5px;
+
+    a {
+      @include comma-separated($size: 1em);
+    }
+  }
+
+  &__album {
+    @include ellipsis-overflow;
+    flex: 1;
+
+    a {
+      @include comma-separated($size: 1em);
+    }
+  }
+
+  &__actions,
+  &__labels {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80px;
+  }
+
+  &__labels {
+    margin-right: 1em;
+  }
+
+  &__duration {
+    width: 80px;
+  }
+}

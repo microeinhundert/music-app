@@ -1,0 +1,162 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the sidebar component.
+// -----------------------------------------------------------------------------
+
+.c-sidebar {
+  position: fixed 0 initial 81px 0;
+  z-index: 999;
+  display: flex;
+  transform: translateZ(0);
+
+  &__inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10em;
+    width: 100px;
+    border-right: 1px solid $white-10;
+    background-color: $dark-blue;
+  }
+
+  &__panelSelect {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__selectItem {
+    overflow: hidden;
+    margin-bottom: 2em;
+    size: 45px;
+    border-radius: 100%;
+
+    &.is-active {
+      .c-sidebar__selectItemIcon {
+        background-color: $white;
+
+        i {
+          color: $black;
+        }
+      }
+    }
+
+    &--user {
+      position: absolute 3em initial initial 50%;
+      margin: 0;
+      size: 55px;
+      border: 3px solid;
+      border-color: transparent;
+      transition: border-color 0.3s;
+      transform: translateX(-50%);
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.is-active {
+        border-color: $white;
+      }
+    }
+
+    &--newplaylist {
+      margin-top: auto;
+    }
+  }
+
+  &__selectItemIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    size: 100%;
+  }
+}
+
+.c-sidebarPanel {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10em;
+  width: 250px;
+  border-right: 1px solid $white-10;
+  background-color: rgba($dark-blue, 0.8);
+  @supports (backdrop-filter: blur(25px) saturate(250%)) {
+    backdrop-filter: blur(25px) saturate(250%);
+  }
+
+  .is-fixed {
+    background-color: lighten($dark-blue, 2%);
+  }
+
+  &__fixedToggle {
+    @include item-hover;
+    position: absolute 20px 20px initial initial;
+    font-size: 1em;
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__parent {
+    max-height: 600px;
+    overflow-y: auto;
+  }
+
+  &__cover {
+    position: relative;
+    margin-top: auto;
+    border-top: 1px solid $white-10;
+
+    .c-button {
+      opacity: 0;
+    }
+
+    &:hover {
+      .c-button {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.c-panelList {
+  position: relative;
+  padding: 0 1.5em;
+
+  &__activeIndicator {
+    position: absolute;
+    left: 0;
+    z-index: 3;
+    width: 1px;
+    background-color: $accent-color;
+    will-change: transform;
+  }
+
+  &__item {
+    margin-bottom: 1.5em;
+    cursor: pointer;
+    transition: transform 0.3s;
+    &:hover {
+      transform: translateX(7px);
+    }
+  }
+
+  &__title {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: $font-weight-bold;
+    font-size: 1.1em;
+  }
+
+  &__meta {
+    margin-top: 5px;
+    color: $white-70;
+    font-size: 0.9em;
+  }
+}

@@ -1,0 +1,208 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the stage component.
+// -----------------------------------------------------------------------------
+
+.c-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  margin-bottom: 10px;
+  padding-top: 69px;
+  min-height: 350px;
+  height: 350px;
+  background-color: $accent-color;
+  transition: background-color 1s;
+
+  &:after {
+    position: absolute 0;
+    z-index: 1;
+    background: linear-gradient(to top, $main-bg-color, cubic-bezier(0.48, 0.30, 0.64, 1.00), transparent), radial-gradient(circle, rgba($main-bg-color, 0), $main-bg-color);
+    content: "";
+  }
+
+  &.is-large {
+    height: 550px;
+    @supports (filter: none) {
+      .c-stage__backgroundImage {
+        filter: none;
+      }
+    }
+
+    &:after {
+      background: linear-gradient(to top, $main-bg-color, cubic-bezier(0.48, 0.30, 0.64, 1.00), transparent);
+    }
+
+    .c-stage__title {
+      font-size: 5.5em;
+    }
+  }
+
+  &--image {
+    background-color: transparent;
+  }
+
+  &--cover {
+    .c-stage__actions {
+      margin-bottom: 0;
+    }
+  }
+
+  &__background {
+    position: absolute 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__backgroundInner {
+    size: 100%;
+  }
+
+  &__backgroundImage {
+    @supports (filter: saturate(150%) blur(40px)) {
+      filter: saturate(150%) blur(40px);
+    }
+    background-position: center;
+    size: 100%;
+
+    &[lazy=loaded] {
+      animation: zoomOut 1s;
+    }
+  }
+
+  &__inner {
+    @include contentWidth;
+    position: relative;
+    z-index: 2;
+    display: flex;
+  }
+
+  &__cover {
+    @include smaller-than('md') {
+      display: none;
+    }
+    overflow: hidden;
+    margin-right: 40px;
+    min-width: 250px;
+    max-width: 250px;
+    border-radius: 10px;
+    box-shadow: $backdrop-shadow;
+    size: 250px;
+
+    &:not(.is-small) {
+      flex: 1;
+    }
+
+    &.is-small {
+      min-width: 180px;
+      size: 180px;
+    }
+  }
+
+  &__coverImage {
+    @include lazy-fadein;
+  }
+
+  &__content {
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+    align-self: center;
+    justify-content: flex-end;
+  }
+
+  &__subtitle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  &__subtitleLink {
+    color: $white-70;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__popularIcon {
+    margin-left: 5px;
+    color: $white-70;
+  }
+
+  &__title {
+    max-width: $content-width-85;
+    font-size: 3em;
+    font-family: $secondary-font-stack;
+    line-height: 1.25em;
+    transform: translateX(-3px);
+
+    &.is-large {
+      font-size: 4em;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  &__info {
+    display: flex;
+    margin-left: auto;
+  }
+
+  &__infoItem {
+    margin-left: 13px;
+    padding-left: 10px;
+    text-align: right;
+
+    &:not(:first-child) {
+      border-left: 1px solid rgba($white, 0.2);
+    }
+  }
+
+  &__infoItemValue {
+    font-size: 1.2em;
+  }
+
+  &__infoItemSubtitle {
+    color: $white-50;
+    text-transform: uppercase;
+    font-size: 0.8em;
+  }
+
+  &__meta {
+    margin: 10px 0;
+    max-width: $content-width-85;
+
+    p {
+      margin: 0;
+      color: $white-70;
+      font-size: 1.2em;
+      line-height: 1.2em;
+    }
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

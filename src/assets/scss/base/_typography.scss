@@ -1,0 +1,35 @@
+// -----------------------------------------------------------------------------
+// This file contains styles related to typography.
+// -----------------------------------------------------------------------------
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+h1 {
+  letter-spacing: 2px;
+}
+
+h4 {
+  color: $white-70;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+}
+
+.o-view {
+  &__app {
+    color: $white;
+    letter-spacing: 1px;
+    font-family: $primary-font-stack;
+    user-select: none;
+  }
+}
