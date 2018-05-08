@@ -8,7 +8,7 @@
 
 ``` bash
 # clone this repository
-git clone http://git.microeinhundert.com/personal-projects/music-app
+git clone https://github.com/microeinhundert/music-app.git
 
 # go into project folder
 cd music-app
