@@ -2,9 +2,9 @@
 
 > Music-Streaming app built with Webpack, Vue.js, Vuex and the Spotify API.
 
-![Browse](src/assets/images/showcase1.jpg)
-![artist](src/assets/images/showcase2.jpg)
-![Playlist](src/assets/images/showcase3.jpg)
+![Browse](src/assets/images/showcase1.png)
+![artist](src/assets/images/showcase2.png)
+![Playlist](src/assets/images/showcase3.png)
 
 ## How to setup dev environment
 
