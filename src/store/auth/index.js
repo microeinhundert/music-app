@@ -7,7 +7,7 @@ const auth = {
     accessToken: '',
     refreshToken: '',
     expiryTime: '',
-    spotifyBackendToken: '123',
+    spotifyBackendToken: '',
   },
   actions,
   mutations,

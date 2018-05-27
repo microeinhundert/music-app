@@ -20,7 +20,7 @@
             v-for="artist in currentPlayback.item.artists"
             :key="artist.id"
             :to="{ name: 'artist', params: { id: artist.id }}"
-            @click.native="closeVideo"
+            @click.native="closeModal"
           >{{ artist.name }}</router-link>
 
         </div>

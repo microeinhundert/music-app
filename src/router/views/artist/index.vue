@@ -68,7 +68,7 @@ export default {
 
       let stageImage;
 
-      if (additionalArtistInfo.headerImages) stageImage = additionalArtistInfo.headerImages;
+      if (additionalArtistInfo) stageImage = additionalArtistInfo.headerImages;
       else if (artistInfo) stageImage = artistInfo.images;
 
       return stageImage;

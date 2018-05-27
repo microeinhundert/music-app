@@ -5,7 +5,7 @@ const actions = {
   * Get the current users profile.
   */
   getProfile({ commit }) {
-    getMyProfile({ type: 'profile' }).then((res) => {
+    getMyProfile().then((res) => {
       const { data } = res;
       commit('SET_PROFILE', { data });
     });
