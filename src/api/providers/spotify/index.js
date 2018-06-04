@@ -78,10 +78,19 @@ export const getRelatedArtists = ({ id }) => spotify({
   url: `/artists/${id}/related-artists`,
 });
 
-// get current user's profile data
+// get current user's profile
 export const getMyProfile = () => spotify({
   method: 'get',
   url: '/me',
+  params: {
+    market,
+  },
+});
+
+// get current user's profile data
+export const getMyProfileData = ({ type }) => spotify({
+  method: 'get',
+  url: `/me/${type}`,
   params: {
     market,
   },

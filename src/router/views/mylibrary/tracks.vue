@@ -29,7 +29,7 @@ api-request.o-view__parent(:resource='dataToFetch', v-model='response')
 </template>
 
 <script>
-import { getMyProfile } from '@/api/providers/spotify';
+import { getMyProfileData } from '@/api/providers/spotify';
 
 export default {
 
@@ -41,7 +41,7 @@ export default {
     // get data to fetch from api
     dataToFetch() {
       return {
-        tracks: () => getMyProfile({ type: 'tracks' }),
+        tracks: () => getMyProfileData({ type: 'tracks' }),
       };
     },
 

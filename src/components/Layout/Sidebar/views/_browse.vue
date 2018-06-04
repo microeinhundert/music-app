@@ -20,7 +20,7 @@ import { mapGetters } from 'vuex';
 import {
   getFeaturedPlaylists,
   getMyPlaybackHistory,
-  getMyProfile,
+  getMyProfileData,
 } from '@/api/providers/spotify';
 
 import maPanelList from '@/components/PanelList';
@@ -76,8 +76,8 @@ export default {
       return {
         featured: () => getFeaturedPlaylists(),
         history: () => getMyPlaybackHistory({ type: 'track' }),
-        tracks: () => getMyProfile({ type: 'tracks' }),
-        albums: () => getMyProfile({ type: 'albums' }),
+        tracks: () => getMyProfileData({ type: 'tracks' }),
+        albums: () => getMyProfileData({ type: 'albums' }),
       };
     },
   },
