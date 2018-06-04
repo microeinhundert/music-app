@@ -15,7 +15,7 @@ const actions = {
   * Get the current users playlists.
   */
   getPlaylists({ commit }) {
-    getMyPlaylists({ type: 'playlists' }).then((res) => {
+    getMyPlaylists().then((res) => {
       const { data } = res;
       commit('SET_PLAYLISTS', { data });
     });

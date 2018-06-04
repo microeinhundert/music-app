@@ -79,9 +79,18 @@ export const getRelatedArtists = ({ id }) => spotify({
 });
 
 // get current user's profile data
-export const getMyProfile = ({ type }) => spotify({
+export const getMyProfile = () => spotify({
   method: 'get',
-  url: `/me/${type}`,
+  url: '/me',
+  params: {
+    market,
+  },
+});
+
+// get current user's playlists
+export const getMyPlaylists = () => spotify({
+  method: 'get',
+  url: '/me/playlists',
   params: {
     market,
   },
