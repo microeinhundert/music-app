@@ -3,7 +3,8 @@ import axios from 'axios';
 
 // register spotify backend axios instance
 export const spotifyBackend = axios.create({
-  baseURL: 'https://spclient.wg.spotify.com/open-backend-2/v1/',
+  /* Insert base URL here if you use this API */
+  baseURL: '',
 });
 
 export const getAdditionalArtistInfo = ({ id }) => spotifyBackend({
