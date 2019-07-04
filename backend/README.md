@@ -2,7 +2,7 @@
 
 > API for music-app built with Node.js.
 
-> Before using the backend, add your Spotify API client and secret inside app.js and add http://localhost:8080/login as a recirect URI inside the Spotify API dashboard. https://developer.spotify.com/dashboard/
+**Before using the backend, add your Spotify API client and secret inside app.js and add http://localhost:8080/login as a recirect URI inside the Spotify API dashboard. https://developer.spotify.com/dashboard/**
 
 ## Run the API
 

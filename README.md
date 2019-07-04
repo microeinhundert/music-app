@@ -2,7 +2,7 @@
 
 > Music-Streaming app built with Webpack, Vue.js, Vuex and the Spotify API.
 
-> Important! This project is nowhere near finished because i stopped developing it. Don't expect everything to work.
+**Important! This project is nowhere near finished because i stopped developing it. Don't expect everything to work.**
 
 ![Browse](src/assets/images/showcase1.png)
 ![artist](src/assets/images/showcase2.png)
