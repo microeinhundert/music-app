@@ -10,9 +10,9 @@
 # install dependencies
 $ npm i
 
-# serve with hot-reload at localhost:3000
-$ npm run dev
+# serve with hot-reload at 0.0.0.0:3000/music-app/v1/
+$ npm run serve
 
-# run in background with pm2
-$ pm2 start app
+# run for production
+$ npm run prod
 ```
