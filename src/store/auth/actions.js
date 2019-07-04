@@ -1,4 +1,4 @@
-import { getAuthURL, getAccessToken, refreshAccessToken, getSpotifyBackendToken } from '@/api/providers/backend';
+import { getAuthURL, getAccessToken, refreshAccessToken } from '@/api/providers/backend';
 
 const actions = {
   /**
@@ -50,23 +50,6 @@ const actions = {
         }, { root: true });
       });
     }
-  },
-
-  /**
-  * Get the access token for spotify's backend api with additional artist info.
-  */
-  getBackendToken({ commit }) {
-    getSpotifyBackendToken().then((res) => {
-      commit('SET_CREDENTIALS', {
-        spotifyBackendToken: res.data.accessToken,
-      });
-    }).catch((err) => {
-      commit('app/SET_NOTICE', {
-        action: 'add',
-        type: 'error',
-        message: `Error: ${err}`,
-      }, { root: true });
-    });
   },
 };
 

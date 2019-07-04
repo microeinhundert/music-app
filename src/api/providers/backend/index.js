@@ -5,7 +5,7 @@ const refreshToken = 'getters/auth/getRefreshToken';
 
 // register music-app backend axios instance
 export const backend = axios.create({
-  baseURL: 'https://api.microeinhundert.com/music-app/v1/',
+  baseURL: 'http://0.0.0.0:3000/music-app/v1/',
 });
 
 // get url to authenticate the user
@@ -33,10 +33,4 @@ export const refreshAccessToken = () => backend({
   params: {
     token: refreshToken,
   },
-});
-
-// get spotify backend token
-export const getSpotifyBackendToken = () => backend({
-  method: 'get',
-  url: '/getBackendToken',
 });

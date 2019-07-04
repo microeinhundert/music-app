@@ -73,9 +73,6 @@ const otherDir = './views/other/',
     // component for general settings
     settings: () =>
       import(/* webpackChunkName: "settings" */ `${otherDir}settings`),
-    // component to manage account settings
-    myAccount: () =>
-      import(/* webpackChunkName: "other" */ `${otherDir}myAccount`),
     // component to login the user
     login: () =>
       import(/* webpackChunkName: "other" */ `${otherDir}login`),
@@ -196,11 +193,6 @@ export default [{
   path: '/settings',
   name: 'settings',
   component: other.settings,
-},
-{
-  path: '/myaccount',
-  name: 'myaccount',
-  component: other.myAccount,
 },
 {
   path: '/login',

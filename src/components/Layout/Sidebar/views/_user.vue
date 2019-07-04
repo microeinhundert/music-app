@@ -27,10 +27,6 @@ export default {
         meta: 'visitprofile',
       },
       {
-        name: 'myaccount',
-        meta: 'manageaccount',
-      },
-      {
         name: 'settings',
         routeName: 'settings',
         meta: 'changesettings',

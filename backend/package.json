@@ -1,0 +1,32 @@
+{
+  "name": "music-app-backend",
+  "version": "1.0.0",
+  "description": "Backend API for music-app built with Node.js.",
+  "author": "Leon Seipp <l.seipp@microeinhundert.com>",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "prod": "node app.js",
+    "lint": "eslint app.js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/microeinhundert/music-app-backend"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "http-status-codes": "^1.3.0",
+    "npm": "^6.1.0",
+    "randomstring": "^1.1.5",
+    "spotify-web-api-node": "^3.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "nodemon": "^1.17.5",
+    "pm2": "^2.10.4"
+  }
+}

@@ -6,8 +6,7 @@ const auth = {
   state: {
     accessToken: '',
     refreshToken: '',
-    expiryTime: '',
-    spotifyBackendToken: '',
+    expiryTime: ''
   },
   actions,
   mutations,
@@ -15,7 +14,6 @@ const auth = {
     getAccessToken: state => state.accessToken,
     getRefreshToken: state => state.refreshToken,
     getExpiryTime: state => state.expiryTime,
-    getSpotifyBackendToken: state => state.spotifyBackendToken,
   },
 };
 

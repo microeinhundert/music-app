@@ -10,6 +10,8 @@ module.exports = {
       'js': 'never',
       'vue': 'never'
     }],
+    'max-len': 'off',
+    'indent': 'off',
     'one-var': ['error', 'always']
   }
 }
